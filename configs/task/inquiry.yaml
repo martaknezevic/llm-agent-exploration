@@ -1,0 +1,10 @@
+prompt_dir: "./prompts/"
+explicit_model: False
+think: True
+memory: False
+instruction_file: "abc_inquiry_instructions_thought_format_continue.txt"
+example_file: "few-shot/abc_fs_inquiry_thought_format.txt"
+zero_shot: True
+hard_aot: False
+inquiry: True
+guided_instructions: False

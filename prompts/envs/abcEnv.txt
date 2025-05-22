@@ -1,0 +1,2 @@
+Now, there are three variables, A, B and C, available for exploration. All the variables are initially set to zero.
+Model the variable D using variables A, B and C based on observations. Model the relationship between the variables using +, -, *, / and ().

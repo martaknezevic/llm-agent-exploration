@@ -1,0 +1,15 @@
+defaults:
+  - env: abc
+  - task: explore_model
+  - agent: default
+  - eval: default
+  - wandb: default
+
+output_dir: "./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}"
+
+task.zero_shot: False
+
+hydra:
+  run:
+    dir: .
+  output_subdir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

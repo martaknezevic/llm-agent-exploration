@@ -1,0 +1,8 @@
+variable_ranges:
+  A: [null, null]
+  B: [null, null]
+  C: [null, null]
+env_file: "envs/abcEnv.txt"
+eval_questions_file: "evaluation_questions/concentration.json"
+name: abc
+equation: "(A - B) / C"

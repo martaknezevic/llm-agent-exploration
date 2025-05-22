@@ -1,0 +1,13 @@
+defaults:
+  - env: abc
+  - task: inquiry
+  - agent: default
+  - eval: default
+  - wandb: default
+
+output_dir: "./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}"
+
+hydra:
+  run:
+    dir: .
+  output_subdir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

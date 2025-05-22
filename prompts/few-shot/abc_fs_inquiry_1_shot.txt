@@ -1,0 +1,33 @@
+Here is an example of how to explore and model variable Z based on variables X and Y.
+
+Example:
+###########################################################################################
+Thought: Let's try setting both X and Y to 1.
+Action: set(X=1, Y=1)
+Observation: {X: 1, Y: 1, Z: 1}
+Thought: After setting X and Y to 1, variable Z became 1. Let's increase X and set it to 2.
+Action: set(X=2)
+Observation: {X: 2, Y: 1, Z: 2}
+Thought: After increasing X from 1 to 2, variable Z increased to 2 and became equal to X.
+Hypothesis: Z = X
+Action: set(Y=2)
+Observation: {X: 2, Y: 2, Z: 1}
+Thought: This observation shows that Z is not equal to X. After increasing Y from 1 to 2, variable Z decreased from 2 to 1. Let's try doubling X and setting it to 2 * X = 2 * 2 = 4.
+Action: set(X=4, Y=2)
+Observation: {X: 4, Y: 2, Z: 2}
+Thought: If I double variable X, variable Z doubles as well. Let's try increasing the value of X by 2 again, setting it to 2 * X = 2 * 4 = 8.
+Action: set(X=8, Y=2)
+Observation: {X: 8, Y: 2, Z: 4}
+Thought: If I double variable X from 4 to 8, variable Z doubles as well, from 2 to 4. It seems like Z and X are proportional. Let's see how Y impacts variable Z. Let's double variable Y from 2 to 4.
+Action: set(X=8, Y=4)
+Observation: {X: 8, Y: 4, Z: 2}
+Thought: If I double variable Y from 2 to 4, variable Z decreases to half, from 4 to 2. This indicates that Z might be X / Y. Let's explore if that is true.
+Hypothesis: Z = X / Y
+Action: set(X=10, Y=5)
+Observation: {X: 10, Y: 5, Z: 2}
+Thought: Since X / Y = 10 / 5 = 2 = Z, new observation confirms the hypothesis.
+Action: set(X=12, Y=5)
+Observation: {X: 12, Y: 5, Z: 2.4}
+Thought: Since X / Y = 12 / 5 = 2.4, new observation confirms the hypothesis.
+Action: finish(Z = X / Y)
+###########################################################################################

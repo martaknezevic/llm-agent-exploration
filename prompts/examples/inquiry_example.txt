@@ -1,0 +1,50 @@
+Explore and model the relationship between the variables by alternating between Action, Observation, Hypothesis and Thought steps. 
+There are two types of Action:
+(1) set(<variable1>=<value1>, ...), which assigns values to the variables,
+(2) finish(<model>), which finishes the exploration and returns modeled equation.
+Observation returns all the variables after value assignment using Action set().
+Hypothesis step formulates hypothesis based on Observations.
+Thought step reasons about impacts of the actions on the observations, and confirms or discards current hypothesis.
+
+Each step is written in a new line followed by ":" and step content, as following:
+<step_name>: <step_content>
+Here is an example of how to explore and model variable Z based on variables X and Y.
+
+Example:
+###########################################################################################
+Thought: Let's try setting both X and Y to 1.
+Action: set(X=1, Y=1)
+Observation: {X: 1, Y: 1, Z: 1}
+Thought: After setting X and Y to 1, variable Z became 1. Let's increase X and set it to 2.
+Action: set(X=2)
+Observation: {X: 2, Y: 1, Z: 2}
+Thought: After increasing X from 1 to 2, variable Z increased to 2 and became equal to X.
+Hypothesis: Z = X
+Action: set(Y=2)
+Observation: {X: 2, Y: 2, Z: 1}
+Thought: This observation shows that Z is not equal to X. After increasing Y from 1 to 2, variable Z decreased from 2 to 1. Let's try doubling X and setting it to 2 * X = 2 * 2 = 4.
+Action: set(X=4, Y=2)
+Observation: {X: 4, Y: 2, Z: 2}
+Thought: If I double variable X, variable Z doubles as well. Let's try increasing the value of X by 2 again, setting it to 2 * X = 2 * 4 = 8.
+Action: set(X=8, Y=2)
+Observation: {X: 8, Y: 2, Z: 4}
+Thought: If I double variable X from 4 to 8, variable Z doubles as well, from 2 to 4. It seems like Z and X are proportional. Let's see how Y impacts variable Z. Let's double variable Y from 2 to 4.
+Action: set(X=8, Y=4)
+Observation: {X: 8, Y: 4, Z: 2}
+Thought: If I double variable Y from 2 to 4, variable Z decreases to half, from 4 to 2. This indicates that Z might be X / Y. Let's explore if that is true.
+Hypothesis: Z = X / Y
+Action: set(X=10, Y=5)
+Observation: {X: 10, Y: 5, Z: 2}
+Thought: Since X / Y = 10 / 5 = 2 = Z, new observation confirms the hypothesis.
+Action: set(X=12, Y=5)
+Observation: {X: 12, Y: 5, Z: 2.4}
+Thought: Since X / Y = 12 / 5 = 2.4, new observation confirms the hypothesis.
+Action: finish(Z = X / Y)
+###########################################################################################
+
+Now, there are three variables, A, B and C, available for exploration. All the variables are initially set to zero.
+Model the variable D using variables A, B and C based on observations. Model the relationship between the variables using +, -, *, / and ().
+
+You are a researcher exploring the relationship between the variables in order to find the correct equation that models variable D.
+Explore the variables using defined steps and find correct equation. After every new observation, use the Thought step to analyse it and reason about the observed change. Do not use multiple Thought steps in a sequence. First, collect a few observations and then propose hypothesis. Use the Hypothesis step explicitly to propose hypothesis. In order to confirm the hypothesis, first calculate the value of D under current hypothesis step by step and then confirm and accept the hypothesis or discard it and propose new hypothesis. Do not write text outside of the defined steps.
+Continue the exploration process.

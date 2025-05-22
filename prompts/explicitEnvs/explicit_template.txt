@@ -1,0 +1,2 @@
+Now, there are {} variables, {} available for exploration. All the variables are initially set to zero.
+Model the {} using {} based on observations. Model the relationship between the variables using +, -, *, / and ().

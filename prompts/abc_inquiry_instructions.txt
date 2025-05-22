@@ -1,0 +1,16 @@
+Explore{} the relationship between the variables by alternating between Action, Observation, Hypothesis and Thought steps. 
+There are two types of Action:
+(1) set(<variable1>=<value1>, ...), which assigns values to the variables,
+(2) finish({}), which finishes the exploration{}.
+Observation returns all the variables after value assignment using Action set().
+Hypothesis step formulates hypothesis based on Observations.
+Thought step reasons about impacts of the actions on the observations, and confirms or discards current hypothesis.
+
+Each step is written in a new line followed by ":" and step content, as following:
+<step_name>: <step_content>
+{}
+{}
+{}
+You are a researcher exploring the relationship between the variables in order to find the correct equation that models variable D.
+Explore the variables using defined steps and find correct equation. After every new observation, use the Thought step to analyse it and reason about the observed change. Do not use multiple Thought steps in a sequence. First, collect a few observations and then propose hypothesis. Use the Hypothesis step explicitly to propose hypothesis. In order to confirm the hypothesis, first calculate the value of D under current hypothesis step by step and then confirm and accept the hypothesis or discard it and propose new hypothesis. Do not write text outside of the defined steps.
+Continue the exploration process.

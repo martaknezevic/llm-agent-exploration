@@ -1,0 +1,280 @@
+[
+    {
+        "input_variables": [
+            {
+                "name": "mass",
+                "acronym": "m"
+            },
+            {
+                "name": "molar mass",
+                "acronym": "M"
+            },
+            {
+                "name": "volume",
+                "acronym": "V"
+            }
+        ],
+        "output_variable": {
+            "name": "concentration",
+            "acronym": "c"
+        },
+        "equation": "c = m / M / V",
+        "file_path": "prompts/explicitEnvs/concentration.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "initial force",
+                "acronym": "Fi"
+            },
+            {
+                "name": "mass",
+                "acronym": "m"
+            },
+            {
+                "name": "acceleration",
+                "acronym": "a"
+            }
+        ],
+        "output_variable": {
+            "name": "total force",
+            "acronym": "Ft"
+        },
+        "equation": "Ft = Fi + m * a",
+        "file_path": "prompts/explicitEnvs/force_total.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "gravitational force",
+                "acronym": "Fg"
+            },
+            {
+                "name": "frictional force",
+                "acronym": "Ff"
+            },
+            {
+                "name": "distance",
+                "acronym": "s"
+            }
+        ],
+        "output_variable": {
+            "name": "work",
+            "acronym": "W"
+        },
+        "equation": "W = (Fg - Ff) * s",
+        "file_path": "prompts/explicitEnvs/work_net.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "initial velocity",
+                "acronym": "vi"
+            },
+            {
+                "name": "displacement",
+                "acronym": "s"
+            },
+            {
+                "name": "time",
+                "acronym": "t"
+            }
+        ],
+        "output_variable": {
+            "name": "final velocity",
+            "acronym": "vf"
+        },
+        "equation": "vf = vi + s / t",
+        "file_path": "prompts/explicitEnvs/velocity_displacement.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "mass",
+                "acronym": "m"
+            },
+            {
+                "name": "gravitational acceleration",
+                "acronym": "g"
+            },
+            {
+                "name": "height",
+                "acronym": "h"
+            }
+        ],
+        "output_variable": {
+            "name": "gravitational potential energy",
+            "acronym": "E"
+        },
+        "equation": "E = m * g * h",
+        "file_path": "prompts/explicitEnvs/energy_gravitational.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "charge of a particle",
+                "acronym": "q"
+            },
+            {
+                "name": "electric field",
+                "acronym": "E"
+            },
+            {
+                "name": "distance",
+                "acronym": "d"
+            }
+        ],
+        "output_variable": {
+            "name": "potential energy",
+            "acronym": "U"
+        },
+        "equation": "U = q * E * d",
+        "file_path": "prompts/explicitEnvs/potential_energy.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "initial voltage",
+                "acronym": "Ui"
+            },
+            {
+                "name": "current",
+                "acronym": "I"
+            },
+            {
+                "name": "resistance",
+                "acronym": "R"
+            }
+        ],
+        "output_variable": {
+            "name": "final voltage",
+            "acronym": "U"
+        },
+        "equation": "Uf = Ui - I * R",
+        "file_path": "prompts/explicitEnvs/voltage_drop.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "current",
+                "acronym": "I"
+            },
+            {
+                "name": "resistance",
+                "acronym": "R"
+            }
+        ],
+        "output_variable": {
+            "name": "voltage",
+            "acronym": "U"
+        },
+        "equation": "U = I * R",
+        "file_path": "prompts/explicitEnvs/ohm_law.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "applied force",
+                "acronym": "Fa"
+            },
+            {
+                "name": "frictional force",
+                "acronym": "Ff"
+            },
+            {
+                "name": "mass",
+                "acronym": "m"
+            }
+        ],
+        "output_variable": {
+            "name": "acceleration",
+            "acronym": "a"
+        },
+        "equation": "a = (Fa - Ff) / m",
+        "file_path": "prompts/explicitEnvs/acceleration_net.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "initial quantity",
+                "acronym": "Ni"
+            },
+            {
+                "name": "rate",
+                "acronym": "r"
+            },
+            {
+                "name": "time",
+                "acronym": "t"
+            }
+        ],
+        "output_variable": {
+            "name": "final quantity",
+            "acronym": "Nf"
+        },
+        "equation": "Nf = Ni - r * t",
+        "file_path": "prompts/explicitEnvs/quantity_decay.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "mass",
+                "acronym": "m"
+            },
+            {
+                "name": "acceleration",
+                "acronym": "a"
+            }
+        ],
+        "output_variable": {
+            "name": "force",
+            "acronym": "F"
+        },
+        "equation": "F = m * a",
+        "file_path": "prompts/explicitEnvs/force_basic.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "force",
+                "acronym": "F"
+            },
+            {
+                "name": "distance",
+                "acronym": "s"
+            }
+        ],
+        "output_variable": {
+            "name": "work",
+            "acronym": "W"
+        },
+        "equation": "W = F * s",
+        "file_path": "prompts/explicitEnvs/work_basic.txt"
+    },
+    {
+        "input_variables": [
+            {
+                "name": "amount of substance",
+                "acronym": "n"
+            },
+            {
+                "name": "gas constant",
+                "acronym": "R"
+            },
+            {
+                "name": "temperature",
+                "acronym": "T"
+            },
+            {
+                "name": "volume",
+                "acronym": "V"
+            }
+        ],
+        "output_variable": {
+            "name": "pressure",
+            "acronym": "p"
+        },
+        "equation": "p = n * R * T / V",
+        "file_path": "prompts/explicitEnvs/ideal_gas_pressure.txt"
+    }
+]

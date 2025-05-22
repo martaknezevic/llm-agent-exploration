@@ -1,0 +1,94 @@
+Here are some examples of how to explore and model variable Z based on variables X and Y.
+
+Example 1:
+###########################################################################################
+Thought: Let's try setting only variable X to 5.
+Action: set(X=5)
+Observation: {X: 5, Y: 0, Z: -5}
+Thought: After setting X to 5, variable Z became -5. Let's decrease X by 2 and set it to 5 - 2 = 3.
+Action: set(X=3)
+Observation: {X: 3, Y: 0, Z: -3}
+Thought: After decreasing X from 5 to 3, variable Z increased from -5 to -3. This indicates that variable Z takes values of -X when Y is zero. Let's explore the impact of variable Y.
+Action: set(Y=7)
+Observation: {X: 3, Y: 7, Z: 4}
+Thought: Increasing variable Y from 0 to 7 increased variable Z from -3 to 4. That is, variable Z increased by 7. Let's try increasing Y by 1, that is setting Y to 8 since Y is currently 7, while keeping X set to 3.
+Action: set(X=3, Y=8)
+Observation: {X: 3, Y: 8, Z: 5}
+Thought: If I increase Y from 7 to 8, Z increases from 4 to 5. An increase of 1 in Y resulted in the same increase in variable Z. This indicates that Z = Y - X. Let's test the relationship Z = Y - X, by observing some new data points.
+Hypothesis: Z = Y - X
+Action: set(X=2, Y=9)
+Observation: {X: 2, Y: 9, Z: 7}
+Thought: Since Y - X = 9 - 2 = 7 = Z, the observation confirms the hypothesis.
+Action: set(X=1, Y=9)
+Observation: {X: 1, Y: 9, Z: 8}
+Thought: Since Y - X = 9 - 1 = 8 = Z, the observation confirms the hypothesis.
+Action: set(X=2, Y=9)
+Observation: {X: 2, Y: -3, Z: -5}
+Thought: Since Y - X = -3 - 2 = -5 = Z, the observation confirms the hypothesis.
+Action: finish(Z = Y - X)
+###########################################################################################
+
+Example 2:
+###########################################################################################
+Thought: Let's try setting X to 8.
+Action: set(X=8)
+Observation: {X: 8, Y: 0, Z: 0}
+Thought: After setting X to 8, variable Z is 0. Let's decrease X to 1.
+Action: set(X=1)
+Observation: {X: 1, Y: 0, Z: 0}
+Thought: After decreasing X from 8 to 1, variable Z remained 0.
+Hypothesis: Variable Z does not depend on X and is always constant equal to 0 i.e Z = 0.
+Thought: Let's observe some datapoints.
+Action: set(X=1, Y=6)
+Observation: {X: 1, Y: 6, Z: 6}
+Thought: This new observation shows that Z is not always 0. Therefore, the hypothesis is wrong. Let's explore how variable Y impacts on Z.
+Action: set(Y=7)
+Observation: {X: 1, Y: 7, Z: 7}
+Thought: Increasing variable Y from 6 to 7 increased variable Z from 6 to 7. That is, variable Z increased by 1.  Let's try increasing X, while keeping Y at 7.
+Action: set(X=3, Y=7)
+Observation: {X: 3, Y: 7, Z: 21}
+Thought: If I increase X from 1 to 3, variable Z increases from 7 to 21. An increase of 2 in X resulted in an increase of 21 - 7 = 14 in Z. Let's increase X by 1. X is currently 3, so let's set it to 4.
+Action: set(X=4, Y=7)
+Observation: {X: 4, Y: 7, Z: 28}
+Thought: Increase of X from 3 to 4 led to increase of Z by 28 - 21 = 7 which is the value of Y. Seems like variable Z can be modeled as the product of X and Y. 
+Hypothesis: Z = X * Y
+Action: set(X=3, Y=-4)
+Observation: {X: 3, Y: -4, Z: -12}
+Thought: Indeed, 3 * -4 = -12, which confirms the hypothesis.
+Action: set(X=2, Y=-1)
+Observation: {X: 2, Y: -1, Z: -2}
+Thought: Since 2 * -1 = -2, observed datapoint confirms that Z = X * Y.
+Action: finish(Z = X * Y)
+###########################################################################################
+
+Example 3:
+###########################################################################################
+Thought: Let's try setting both X and Y to 1.
+Action: set(X=1, Y=1)
+Observation: {X: 1, Y: 1, Z: 1}
+Thought: After setting X and Y to 1, variable Z became 1. Let's increase X and set it to 2.
+Action: set(X=2)
+Observation: {X: 2, Y: 1, Z: 2}
+Thought: After increasing X from 1 to 2, variable Z increased to 2 and became equal to X.
+Hypothesis: Z = X
+Action: set(Y=2)
+Observation: {X: 2, Y: 2, Z: 1}
+Thought: This observation shows that Z is not equal to X. After increasing Y from 1 to 2, variable Z decreased from 2 to 1. Let's try doubling X and setting it to 2 * X = 2 * 2 = 4.
+Action: set(X=4, Y=2)
+Observation: {X: 4, Y: 2, Z: 2}
+Thought: If I double variable X, variable Z doubles as well. Let's try increasing the value of X by 2 again, setting it to 2 * X = 2 * 4 = 8.
+Action: set(X=8, Y=2)
+Observation: {X: 8, Y: 2, Z: 4}
+Thought: If I double variable X from 4 to 8, variable Z doubles as well, from 2 to 4. It seems like Z and X are proportional. Let's see how Y impacts variable Z. Let's double variable Y from 2 to 4.
+Action: set(X=8, Y=4)
+Observation: {X: 8, Y: 4, Z: 2}
+Thought: If I double variable Y from 2 to 4, variable Z decreases to half, from 4 to 2. This indicates that Z might be X / Y. Let's explore if that is true.
+Hypothesis: Z = X / Y
+Action: set(X=10, Y=5)
+Observation: {X: 10, Y: 5, Z: 2}
+Thought: Since X / Y = 10 / 5 = 2 = Z, new observation confirms the hypothesis.
+Action: set(X=12, Y=5)
+Observation: {X: 12, Y: 5, Z: 2.4}
+Thought: Since X / Y = 12 / 5 = 2.4, new observation confirms the hypothesis.
+Action: finish(Z = X / Y)
+###########################################################################################

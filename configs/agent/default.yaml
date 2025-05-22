@@ -1,0 +1,12 @@
+#model: 'gpt-4o'
+model: 'llama-70b-33'
+num_steps: 100
+seed: 1
+verifier: 'llm' # one of [llm, auto]
+la1_steps: 7
+la2_steps: 3
+exploration_epochs: 2
+do_sample: False
+temperature: 0.0
+max_num_obs: 19
+max_calls: 30

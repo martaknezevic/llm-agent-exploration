@@ -1,0 +1,26 @@
+defaults:
+  - env: explicit
+  - task: explore_model
+  - agent: default
+  - eval: default
+  - wandb: default
+
+output_dir: "./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}"
+
+task:
+  think: false
+  zero_shot: true
+  instruction_file: "explicitEnv_instructions.txt"
+
+agent:
+  model: "gemma"
+  num_steps: 10
+
+wandb:
+  project_name: "default"
+  use_wandb: False
+
+hydra:
+  run:
+    dir: .
+  output_subdir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

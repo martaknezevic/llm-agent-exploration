@@ -1,0 +1,9 @@
+prompt_dir: "prompts/"
+explicit_model: True
+think: True
+memory: False
+instruction_file: "instructions.txt"
+example_file: "few-shot/abc_fs_reason_1.txt"
+zero_shot: True
+hard_aot: False
+inquiry: False

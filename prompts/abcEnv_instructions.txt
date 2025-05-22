@@ -1,0 +1,14 @@
+Explore{} the relationship between the variables by alternating between Action{} steps. There are two types of Action:
+(1) set(<variable1>=<value1>, ...), which assigns values to the variables,
+(2) finish({}), which finishes the exploration{}.
+Observation returns all the variables after value assignment using Action set().
+{}{} 
+
+Each step is written in a new line followed by ":" and step content, as following:
+<step_name>: <step_content>
+{}
+{}
+{}
+You are a researcher exploring the relationship between the variables in order to find the correct equation that models variable D.
+Explore the variables using defined steps and find correct equation.{} Do not write text outside of the defined steps.
+Continue the exploration process.

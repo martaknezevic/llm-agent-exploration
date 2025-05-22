@@ -1,0 +1,9 @@
+variable_ranges:
+  A: [null, null]
+  B: [null, null]
+  C: [null, null]
+env_file: "envs/explicitEnv.txt"
+eval_questions_file: "evaluation_questions/concentration.json"
+name: explicit
+equation: "c = m / M / V"
+dep_var_name: concentration

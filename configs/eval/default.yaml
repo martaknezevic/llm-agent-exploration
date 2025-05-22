@@ -1,0 +1,8 @@
+dir: "./prompts/"
+eval_instruction_file: "evaluation/instruction.txt"
+eval_action_description_file: "evaluation/instruction_action_description.txt"
+prompt:
+  include_action_description: False
+  include_full_history: True
+  include_memory: False
+  include_explicit_model: False

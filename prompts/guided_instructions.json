@@ -1,0 +1,10 @@
+{
+    "action": "Continue exploring by writing the next Action step. Do not write text outside of the defined steps. Write only next Action step.",
+    "action_guided": "Continue exploring by writing the next Action step. Modify only one variable at a time. Do not write text outside of the defined steps. Write only next Action step.",
+    "thought": "Reason about the new observation by writing Thought step. Analyze new observation and reason about observed change. Do not write text outside of the defined steps. Write only next Thought step.",
+    "hypothesis": "Based on the above steps write a Hypothesis for the variable D. Do not write text outside of the defined steps. Write only next Hypothesis step.",
+    "hypothesis_zero": "Based on the above steps write a Hypothesis for the variable D. Write the hypothesis as a mathematical equation only without any additional text. Do not write text outside of the defined steps. Write only next Hypothesis step.",
+    "finish": "Write the finish Action. Do not write anything else, just write the final model of variable D as the argument of the finish Action. Do not write the wrong model. Do not write text outside of the defined steps. Do not write other steps.",
+    "thought_guided_last": "Reason about the new observation by writing the Thought step. For the content of the Thought answer the following questions: Which variable was changed and how? How did the change affect variable D?. Do not write text outside of the defined steps. Write only next Thought step.",
+    "thought_only_guided": "Reason about the new observation by writing the Thought step. For the content of the Thought answer the following questions: What was the change? How did the change affect variable D?. Do not write text outside of the defined steps. Write only next Thought step."
+}
